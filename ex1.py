@@ -24,3 +24,24 @@ def isSuiteGeometrique(l):
 			return False
 
 	return True
+
+def isSuiteArethmetique(l):
+	# The input should be a list!
+	if not isinstance(l,list):
+		return False
+
+	# All variables in the list should be numeric!
+	for n in l:
+		if not isinstance(n,(int,float)):
+			return False
+
+	# The sequence should contain at least 3 element!
+	if len(l) < 3:
+		return False
+
+	# This sequence is not a arethmetic sequence！
+	for n in range(len(l)-2):
+		if l[n+2] + l[n] != l[n+1] + l[n+1]:
+			return False
+
+	return True
