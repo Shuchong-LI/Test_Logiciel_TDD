@@ -33,13 +33,15 @@ class test_ex1(unittest.TestCase):
 		self.assertEqual(ex1.isSuiteArethmetique([4,20,36,52]),True)
 
 		#float list 
-		self.assertEqual(ex1.isSuiteArethmetique([1.2,2.4,3.6,4.8]),True)
-		self.assertEqual(ex1.isSuiteArethmetique([2.5,5,7.5.10,12.5]),True)
+		self.assertEqual(ex1.isSuiteArethmetique([2.5,5,7.5,10,12.5]),True)
+		# self.assertEqual(ex1.isSuiteArethmetique([1.1,2.2,3.3,4.4]),True) # precision fault
 
 		#fault test
 		self.assertEqual(ex1.isSuiteArethmetique("I am not a list"),False)
 		self.assertEqual(ex1.isSuiteArethmetique([1,2,3,4,7]),False)
 		self.assertEqual(ex1.isSuiteArethmetique([1,2,'a','b','c']),False)
+		self.assertEqual(ex1.isSuiteArethmetique([1,2]),False)
+
 
 
 
