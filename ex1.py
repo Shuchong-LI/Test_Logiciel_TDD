@@ -61,3 +61,19 @@ def G_n_suivant(n_suiv,l):
 
 
 	return True,l_suiv
+
+def A_n_suivant(n_suiv,l):
+	# The first input should be an int!
+	if not isinstance(n_suiv,int) :
+		return False
+	# The second input should be a iist!
+	if not isSuiteArethmetique(l):
+		return False
+
+	l_suiv = list()
+
+	for i in range(n_suiv):
+		l_suiv.append((l[1]-l[0])*(i+1)+l[-1])
+
+
+	return True,l_suiv
