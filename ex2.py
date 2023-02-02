@@ -87,3 +87,9 @@ def verify_block(l):
 			l_flag = [0,0,0,0,0,0,0,0,0]
 
 	return True
+
+def verify_sudoku(l):
+	if verify_row(l) and verify_column(l) and verify_block(l):
+		return True
+	else:
+		return False
