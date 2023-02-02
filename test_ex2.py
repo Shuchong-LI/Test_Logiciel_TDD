@@ -99,8 +99,19 @@ l9 = 	[[1,9,3,5,1,4,1,2,8],
 		[8,2,8,8,4,9,3,7,3],
 		[9,1,7,9,3,8,2,5,1]]
 
-#  good sudokgu
-l10 = 	[[1,9,8,5,2,6,3,4,7],
+# Good for blocks
+l10 = 	[[1,2,3,9,8,7,3,4,9],
+		[4,5,6,6,5,4,2,5,8],
+		[7,8,9,3,2,1,1,6,7],
+		[1,6,7,7,6,1,3,6,9],
+		[2,5,8,8,5,2,2,5,8],
+		[3,4,9,9,4,3,1,4,7],
+		[1,7,4,1,9,6,1,4,7],
+		[3,9,6,2,8,5,2,5,8],
+		[5,2,8,3,7,4,3,6,9]]
+
+#  Good sudokgu
+l11 = 	[[1,9,8,5,2,6,3,4,7],
 		[7,2,5,3,4,1,6,9,8],
 		[3,4,6,9,7,8,2,1,5],
 		[9,8,1,2,5,7,4,6,3],
@@ -149,7 +160,8 @@ class test_ex2(unittest.TestCase):
 
 		self.assertTrue(ex2.verify_row(l8))
 		self.assertFalse(ex2.verify_row(l9))
-		self.assertTrue(ex2.verify_row(l10))
+		self.assertFalse(ex2.verify_row(l10))
+		self.assertTrue(ex2.verify_row(l11))
 
 	def test_verify_column(self):
 		print("testing verify_column...")
@@ -165,9 +177,25 @@ class test_ex2(unittest.TestCase):
 
 		self.assertFalse(ex2.verify_column(l8))
 		self.assertTrue(ex2.verify_column(l9))
-		self.assertTrue(ex2.verify_column(l10))
+		self.assertFalse(ex2.verify_column(l10))
+		self.assertTrue(ex2.verify_column(l11))
 
-	# def test_verify_block(self):
+	def test_verify_block(self):
+		print("testing verify_block...")
+
+		self.assertFalse(ex2.verify_block(l1))
+		self.assertFalse(ex2.verify_block(l2))
+		self.assertFalse(ex2.verify_block(l3))
+
+		self.assertFalse(ex2.verify_block(l4))
+		self.assertFalse(ex2.verify_block(l5))
+		self.assertFalse(ex2.verify_block(l6))
+		self.assertFalse(ex2.verify_block(l7))
+
+		self.assertFalse(ex2.verify_block(l8))
+		self.assertFalse(ex2.verify_block(l9))
+		self.assertTrue(ex2.verify_block(l10))
+		self.assertTrue(ex2.verify_block(l11))
 
 	# def test_verify_sudoku(self):
 	# 	print("testing verify_sudoku...")
