@@ -77,6 +77,39 @@ l7 = 	[[1,2,1,1,1,1,1,1,9],
 		[5,1,1,3,1,1,8,1,1],
 		[1,6,1,1,2,1,1,9,1]]
 
+# Good for rows
+l8 = 	[[1,2,3,4,5,6,7,8,9],
+		[2,1,3,4,5,6,7,8,9],
+		[1,2,5,4,3,6,7,8,9],
+		[6,2,3,4,5,1,7,8,9],
+		[3,2,1,4,5,9,7,8,6],
+		[2,1,3,4,6,5,7,8,9],
+		[1,2,3,4,5,6,7,8,9],
+		[1,2,3,4,5,6,7,8,9],
+		[1,2,3,4,5,6,7,8,9]]
+
+# Good for columns
+l9 = 	[[1,9,3,5,1,4,1,2,8],
+		[2,8,2,4,2,3,6,4,6],
+		[3,7,1,3,9,2,7,6,4],
+		[4,6,4,2,8,1,8,8,2],
+		[5,5,5,1,7,5,9,1,9],
+		[6,4,6,6,6,6,5,3,7],
+		[7,3,9,7,5,7,4,9,5],
+		[8,2,8,8,4,9,3,7,3],
+		[9,1,7,9,3,8,2,5,1]]
+
+#  good sudokgu
+l10 = 	[[1,9,8,5,2,6,3,4,7],
+		[7,2,5,3,4,1,6,9,8],
+		[3,4,6,9,7,8,2,1,5],
+		[9,8,1,2,5,7,4,6,3],
+		[5,6,4,1,3,9,8,7,2],
+		[2,3,7,6,8,4,1,5,9],
+		[4,7,3,8,1,5,9,2,6],
+		[8,1,9,7,6,2,5,3,4],
+		[6,5,2,4,9,3,7,8,1]]
+
 
 
 class test_ex2(unittest.TestCase):
@@ -102,7 +135,21 @@ class test_ex2(unittest.TestCase):
 
 
 		
-	# def test_verify_row(self):
+	def test_verify_row(self):
+		print("testing verify_row...")
+
+		self.assertFalse(ex2.verify_row(l1))
+		self.assertFalse(ex2.verify_row(l2))
+		self.assertFalse(ex2.verify_row(l3))
+
+		self.assertFalse(ex2.verify_row(l4))
+		self.assertFalse(ex2.verify_row(l5))
+		self.assertFalse(ex2.verify_row(l6))
+		self.assertFalse(ex2.verify_row(l7))
+
+		self.assertTrue(ex2.verify_row(l8))
+		self.assertFalse(ex2.verify_row(l9))
+		self.assertTrue(ex2.verify_row(l10))
 
 	# def test_verify_column(self):
 
