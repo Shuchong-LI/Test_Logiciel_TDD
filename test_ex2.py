@@ -151,7 +151,21 @@ class test_ex2(unittest.TestCase):
 		self.assertFalse(ex2.verify_row(l9))
 		self.assertTrue(ex2.verify_row(l10))
 
-	# def test_verify_column(self):
+	def test_verify_column(self):
+		print("testing verify_column...")
+
+		self.assertFalse(ex2.verify_column(l1))
+		self.assertFalse(ex2.verify_column(l2))
+		self.assertFalse(ex2.verify_column(l3))
+
+		self.assertFalse(ex2.verify_column(l4))
+		self.assertFalse(ex2.verify_column(l5))
+		self.assertFalse(ex2.verify_column(l6))
+		self.assertFalse(ex2.verify_column(l7))
+
+		self.assertFalse(ex2.verify_column(l8))
+		self.assertTrue(ex2.verify_column(l9))
+		self.assertTrue(ex2.verify_column(l10))
 
 	# def test_verify_block(self):
 
