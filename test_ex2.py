@@ -197,8 +197,23 @@ class test_ex2(unittest.TestCase):
 		self.assertTrue(ex2.verify_block(l10))
 		self.assertTrue(ex2.verify_block(l11))
 
-	# def test_verify_sudoku(self):
-	# 	print("testing verify_sudoku...")
+	def test_verify_sudoku(self):
+		print("testing verify_sudoku...")
+
+		self.assertFalse(ex2.verify_sudoku(l1))
+		self.assertFalse(ex2.verify_sudoku(l2))
+		self.assertFalse(ex2.verify_sudoku(l3))
+
+		self.assertFalse(ex2.verify_sudoku(l4))
+		self.assertFalse(ex2.verify_sudoku(l5))
+		self.assertFalse(ex2.verify_sudoku(l6))
+		self.assertFalse(ex2.verify_sudoku(l7))
+
+		self.assertFalse(ex2.verify_sudoku(l8))
+		self.assertFalse(ex2.verify_sudoku(l9))
+		self.assertFalse(ex2.verify_sudoku(l10))
+		self.assertTrue(ex2.verify_sudoku(l11))
+
 
 
 
